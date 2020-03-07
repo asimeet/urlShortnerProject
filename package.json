@@ -1,0 +1,23 @@
+{
+  "name": "url-shortner-project",
+  "version": "1.0.0",
+  "description": "This is test project that shorterns any given url",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/asimeet/urlShortnerProject.git"
+  },
+  "keywords": [
+    "url-shortner",
+    "demo-project"
+  ],
+  "author": "Asimeet Padhee",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/asimeet/urlShortnerProject/issues"
+  },
+  "homepage": "https://github.com/asimeet/urlShortnerProject#readme"
+}

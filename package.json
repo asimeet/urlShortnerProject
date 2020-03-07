@@ -19,5 +19,10 @@
   "bugs": {
     "url": "https://github.com/asimeet/urlShortnerProject/issues"
   },
-  "homepage": "https://github.com/asimeet/urlShortnerProject#readme"
+  "homepage": "https://github.com/asimeet/urlShortnerProject#readme",
+  "dependencies": {
+    "ejs": "^3.0.1",
+    "express": "^4.17.1",
+    "path": "^0.12.7"
+  }
 }

@@ -1,7 +1,7 @@
 # The URL Shortner Project
 <b>Objective</b>
 <ul> User Gives any URL as Input and gets a shorterned URL</ul>
-<b>Tech Stack<b>
+<b>Tech Stack</b>
 <ul>Forntend : Node.js(EJS views)</ul>
 <ul>Backend : Node.js</ul>
 <ul>Database : Not yet used(will be used,currently using application cache)</ul> 

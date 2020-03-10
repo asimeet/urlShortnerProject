@@ -7,7 +7,7 @@
 like Total Url shortened and  data about each shortened url<p></ul>
 <ul> Admin password is admin</ul>
 <b>Project Structure</b>
-<ul>--node_module   "All Dependent Library"</ul>
+<ul>--<b>node_module</b>   "All Dependent Library"</ul>
 <ul>--<b>src</b>   "Source Code"</ul>
 <ul>----<b>assets</b>   "For loading the UI properly"</ul>
 <ul>----<b>controller</b>   "Has Client Code Injectors to inject client side scripts"</ul>

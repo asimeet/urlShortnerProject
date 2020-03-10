@@ -1,6 +1,9 @@
 # The URL Shortner Project
 <b>Objective</b>
 <ul> User Gives any URL as Input and gets a shorterned URL</ul>
+<b><Application Details</b>
+<ul>Hosted On: AWS-EC2 instance</ul>
+<ul>Tech Stack: Forntend-Node.js(EJS views)| Backend-Node.js | Database-Not yet used(will be used,currently using application cache)</ul> 
 <b>Instructions</b>
 <ul>-Running Application can be tested in url http://13.58.109.119:4400</ul>
 <ul>-Admin Data can be viewed by clicking on button "View Admin Data" on the bottom of the page</ul>
@@ -8,11 +11,11 @@
 <ul>-Admin Data has details like time-series plot of url created and the json dump of url created</ul>
 <ul>-Admin password is admin</ul>
 <b>Project Structure</b>
-<ul>--<b>node_module</b>   "All Dependent Library"</ul>
+<ul>--<b>node_module</b>   "All Dependent Libraries"</ul>
 <ul>--<b>src</b>   "Source Code"</ul>
-<ul>----<b>assets</b>   "For loading the UI properly"</ul>
+<ul>----<b>assets</b>   "For loading the UI assets"</ul>
 <ul>----<b>controller</b>   "Has Client Code Injectors to inject client side scripts"</ul>
-<ul>----<b>lib</b>   "Important helper javascript files for the application"</ul>
+<ul>----<b>lib</b>   "Important helpers like cacher,db instance and base calsses used by the application"</ul>
 <ul>----<b>routers</b>   "Express Routers with routing mechanism"</ul>
 <ul>----<b>services</b>   "Core functionality of the app"</ul>
 <ul>----<b>views</b>   "UI EJS document"</ul>
@@ -20,5 +23,7 @@
 <ul>--<b>index.js</b>   "App bootstartping code"</ul>
 <ul>--<b>package.json</b>   "Node dependencies"</ul>
 <ul>--<b>readme.md</b>   "This file"</ul>
+
+ 
 
 

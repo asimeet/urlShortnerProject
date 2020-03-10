@@ -22,14 +22,14 @@
 
         <div>
             <div style="width:40%;float: left;">
-                <input id="input-url" class="input">
+                <input id="input-url" class="input" placeholder="Enter your URL">
                 </input>               
             </div>
             <div style="width: 20%;float: left;">
                 <button type="submit" class="btn" onclick="viewAttributes.getShortenedUrl()">Make it Short</button>
             </div>
             <div id="results" style="width:35%;float: left;">
-                <a id="linkNode">ShortenedUrl</a>
+                <a id="linkNode"><i style="color:grey;">Shortened URL</i></a>
             </div>
         </div>
 
@@ -50,7 +50,7 @@
         </div>
         <div style="font-size:0.8em;margin-top:5px;" id="passwd" hidden=true>
             Enter Password
-            <input type="text" id="pass">
+            <input type="password" id="pass">
             <button type="submit"  onclick="viewAttributes.getAdminData()">Submit
             </button> 
         </div>

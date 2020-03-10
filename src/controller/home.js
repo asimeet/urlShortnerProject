@@ -41,13 +41,9 @@ class ViewInjector {
         let ref = this;
         xhttp.onreadystatechange = function () {
             if (this.readyState == 4 && this.status == 200) {
-                var data = `<html><body><pre>${JSON.stringify(this.response)}</pre></body></html>`;
-                let something = window.open("data:text/json,",
-                    "_blank");
-                something.document.write(this.response);
-                something.focus();
-            }
-        };
+                ref.renderAdminData(this.response);
+            };
+        }
         xhttp.open("POST", `${this.config.baseAppUrl}/admin-data`, true);
         xhttp.setRequestHeader("Content-type", "application/json");
         let body = JSON.stringify({
@@ -55,6 +51,68 @@ class ViewInjector {
         });
         xhttp.send(body);
 
+    }
+    renderAdminData(responseIn) {
+        let resObj = JSON.parse(responseIn);
+        let plotData = {
+            x: [],
+            y: [],
+            type: "scatter"
+        }
+        let count = 0;
+        resObj.data.forEach(item => {
+            let date = item.createdAt.split('T')[0];
+            let foundIndex;
+            let dateFound = plotData.x.find((item, index) => {
+                if (item == date) {
+                    foundIndex = index;
+                    return true;
+                }
+            });
+            if (dateFound) {
+                count++;
+                plotData.y[foundIndex] = count;
+            } else {
+                count = 0;
+                count++;
+                plotData.x.push(date);
+                plotData.y.push(count);
+
+                foundIndex = undefined;
+            }
+
+        })
+        var HTMLStr = `
+            <head>
+                <!-- Load plotly.js into the DOM -->
+                <script src='https://cdn.plot.ly/plotly-latest.min.js'></script>
+            
+            </head>
+            
+            
+            <body>
+                <div id="total"><h2>Total URL Shorterned So Far: ${resObj.totalUrlCreated}</h2></div>
+                <div id='plot' class="plotit()"><!-- Plotly chart will be drawn inside this DIV --></div>
+                <div>
+                <div id="total"><h2>Details</h2></div>
+                <pre id="json">${JSON.stringify(resObj, undefined, 2)}</pre>
+            </body>
+            
+            <script>
+            var data = [
+                ${JSON.stringify(plotData)}
+            ];
+            
+            Plotly.newPlot('plot', data);
+            
+            </script>`;
+
+        let newWindow = window.open("data:text/json,",
+            "_blank");
+
+        newWindow.document.write(HTMLStr);
+
+        newWindow.focus();
     }
 }
 

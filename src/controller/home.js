@@ -60,7 +60,7 @@ class ViewInjector {
             type: "scatter"
         }
         let count = 0;
-        let hidePlot = false;
+        let hidePlot = '';
         if (resObj.data) {
             resObj.data.forEach(item => {
                 let date = item.createdAt.split('T')[0];
@@ -85,7 +85,7 @@ class ViewInjector {
 
             });
         }else{
-            hidePlot = true;
+            hidePlot = `hidden`;
         }
         var HTMLStr = `
             <head>
@@ -96,8 +96,8 @@ class ViewInjector {
             
             
             <body>
-                <div id="total" hidden="${hidePlot}><h2>Total URL Shorterned So Far: ${resObj.totalUrlCreated}</h2></div>
-                <div id='plot' hidden="${hidePlot}"><!-- Plotly chart will be drawn inside this DIV --></div>
+                <div id="total" ${hidePlot}><h2>Total URL Shorterned So Far: ${resObj.totalUrlCreated}</h2></div>
+                <div id="plot" ${hidePlot}><!-- Plotly chart will be drawn inside this DIV --></div>
                 <div id="total"><h2>Details</h2></div>
                 <pre id="json">${JSON.stringify(resObj, undefined, 2)}</pre>
             </body>

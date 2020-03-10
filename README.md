@@ -2,7 +2,7 @@
 <b>Objective</b>
 <ul> User Gives any URL as Input and gets a shorterned URL</ul>
 <b>Instructions</b>
-<ul> Running Application can be tested in http://3.15.10.80:4400/</ul>
+<ul> Running Application can be tested in url http://13.58.109.119:4400</ul>
 <ul><p>View Admin Data (after submitting password) will give neccessary application data in json
 like Total Url shortened and  data about each shortened url<p></ul>
 <ul> Admin password is admin</ul>

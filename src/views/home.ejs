@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html>
 
+
+<script src="home.js">
+
+</script>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -12,58 +17,44 @@
 <body>
     <!--HEADER-->
     <header>
-        <div class="container">
+        <h1>- Url Shortner -</h1>
+        <h4>Shorten your favorite URL and share !.</h4>
 
-            <div class="row">
-                <div class="twelve columns">
-                    <h1>- Url Shortner -</h1>
-                    <h4>Shorten your favorite URL and share !.</h4>
-                    <input class="input">
-                    </input>
-                    <br>
-                    <a href="#" class="btn">Make it Short</a>
-                </div>
+        <div>
+            <div style="width:40%;float: left;">
+                <input id="input-url" class="input">
+                </input>               
             </div>
-
+            <div style="width: 20%;float: left;">
+                <button type="submit" class="btn" onclick="viewAttributes.getShortenedUrl()">Make it Short</button>
+            </div>
+            <div id="results" style="width:35%;float: left;">
+                <a id="linkNode">ShortenedUrl</a>
+            </div>
         </div>
-        <!--end of .container-->
+
     </header>
+   
+
 
     <!--CONTACT-->
     <section class="contact">
-        <div class="container">
-            <div class="row">
-                <div class="twelve columns">
-                    <h3>Contact</h3>
-                </div>
-            </div>
-            <!--end of .row-->
-            <div class="row">
-                <div class="offset-by-two eight columns">
-                    <ul>
-                        <li><a href="#" title=""><span class="fa fa-facebook"></span></a></li>
-                        <li><a href="#" title=""><span class="fa fa-twitter"></span></a></li>
-                        <li><a href="#" title=""><span class="fa fa-dribbble"></span></a></li>
-                        <li><a href="#" title=""><span class="fa fa-linkedin"></span></a></li>
-                        <li><a href="#" title=""><span class="fa fa-github"></span></a></li>
-                    </ul>
-                </div>
-            </div>
-            <!--end of .row-->
-            <div class="row">
-                <div class="twelve columns">
-                    <a href="#" class="btn block btn-blue">Mail me</a>
-                </div>
-            </div>
-            <!--end of .row-->
-            <div class="row">
-                <div class="twelve columns">
-                    <p class="creator">A demo by Asimeet Padhee.</p>
-                </div>
-            </div>
-            <!--end of .row-->
+        <div>
+            <a href="mailto:asimeet.ap@gmail.com" class="btn block btn-blue">Mail me</a>
         </div>
-        <!--end of .container-->
+        <div>
+            <p class="creator">A demo by Asimeet Padhee.</p>
+        </div>
+        <div>
+            <button type="submit" style="background-color:aqua;border-radius:2%;margin-top:5px;" onclick="viewAttributes.showPass()">View Admin Data</button>
+        </div>
+        <div style="font-size:0.8em;margin-top:5px;" id="passwd" hidden=true>
+            Enter Password
+            <input type="text" id="pass">
+            <button type="submit"  onclick="viewAttributes.getAdminData()">Submit
+            </button> 
+        </div>
+
     </section>
 </body>
 

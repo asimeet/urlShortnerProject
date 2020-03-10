@@ -60,28 +60,33 @@ class ViewInjector {
             type: "scatter"
         }
         let count = 0;
-        resObj.data.forEach(item => {
-            let date = item.createdAt.split('T')[0];
-            let foundIndex;
-            let dateFound = plotData.x.find((item, index) => {
-                if (item == date) {
-                    foundIndex = index;
-                    return true;
+        let hidePlot = false;
+        if (resObj.data) {
+            resObj.data.forEach(item => {
+                let date = item.createdAt.split('T')[0];
+                let foundIndex;
+                let dateFound = plotData.x.find((item, index) => {
+                    if (item == date) {
+                        foundIndex = index;
+                        return true;
+                    }
+                });
+                if (dateFound) {
+                    count++;
+                    plotData.y[foundIndex] = count;
+                } else {
+                    count = 0;
+                    count++;
+                    plotData.x.push(date);
+                    plotData.y.push(count);
+
+                    foundIndex = undefined;
                 }
+
             });
-            if (dateFound) {
-                count++;
-                plotData.y[foundIndex] = count;
-            } else {
-                count = 0;
-                count++;
-                plotData.x.push(date);
-                plotData.y.push(count);
-
-                foundIndex = undefined;
-            }
-
-        })
+        }else{
+            hidePlot = true;
+        }
         var HTMLStr = `
             <head>
                 <!-- Load plotly.js into the DOM -->
@@ -91,9 +96,8 @@ class ViewInjector {
             
             
             <body>
-                <div id="total"><h2>Total URL Shorterned So Far: ${resObj.totalUrlCreated}</h2></div>
-                <div id='plot' class="plotit()"><!-- Plotly chart will be drawn inside this DIV --></div>
-                <div>
+                <div id="total" hidden="${hidePlot}><h2>Total URL Shorterned So Far: ${resObj.totalUrlCreated}</h2></div>
+                <div id='plot' hidden="${hidePlot}"><!-- Plotly chart will be drawn inside this DIV --></div>
                 <div id="total"><h2>Details</h2></div>
                 <pre id="json">${JSON.stringify(resObj, undefined, 2)}</pre>
             </body>

@@ -9,15 +9,15 @@ like Total Url shortened and  data about each shortened url<p></ul>
 <b>Project Structure</b>
 <ul>--node_module   "All Dependent Library"</ul>
 <ul>--<b>src</b>   "Source Code"</ul>
-<ul>----assets   "For loading the UI properly"</ul>
-<ul>----controller   "Has Client Code Injectors to inject client side scripts"</ul>
-<ul>----lib   "Important helper javascript files for the application"</ul>
-<ul>----routers   "Express Routers with routing mechanism"</ul>
-<ul>----services   "Core functionality of the app"</ul>
-<ul>----views   "UI EJS document"</ul>
-<ul>----config.js   "Important Environment based configuration for app"</ul>
-<ul>--index.js   "App bootstartping code"</ul>
-<ul>--package.json   "Node dependencies"</ul>
-<ul>--readme.md   "This file"</ul>
+<ul>----<b>assets</b>   "For loading the UI properly"</ul>
+<ul>----<b>controller</b>   "Has Client Code Injectors to inject client side scripts"</ul>
+<ul>----<b>lib</b>   "Important helper javascript files for the application"</ul>
+<ul>----<b>routers</b>   "Express Routers with routing mechanism"</ul>
+<ul>----<b>services</b>   "Core functionality of the app"</ul>
+<ul>----<b>views</b>   "UI EJS document"</ul>
+<ul>----<b>config.js</b>   "Important Environment based configuration for app"</ul>
+<ul>--<b>index.js</b>   "App bootstartping code"</ul>
+<ul>--<b>package.json</b>   "Node dependencies"</ul>
+<ul>--<b>readme.md</b>   "This file"</ul>
 
 

@@ -1,9 +1,11 @@
 # The URL Shortner Project
 <b>Objective</b>
 <ul> User Gives any URL as Input and gets a shorterned URL</ul>
-<b><Application Details</b>
-<ul>Hosted On: AWS-EC2 instance</ul>
-<ul>Tech Stack: Forntend-Node.js(EJS views)| Backend-Node.js | Database-Not yet used(will be used,currently using application cache)</ul> 
+<b>Tech Stack<b>
+<ul>Forntend : Node.js(EJS views)</ul>
+<ul>Backend : Node.js</ul>
+<ul>Database : Not yet used(will be used,currently using application cache)</ul> 
+<ul>Server: AWS-EC2 instance</ul>
 <b>Instructions</b>
 <ul>-Running Application can be tested in url http://13.58.109.119:4400</ul>
 <ul>-Admin Data can be viewed by clicking on button "View Admin Data" on the bottom of the page</ul>

@@ -4,7 +4,6 @@ class urlShortner {
     constructor(inUrl) {
         this.inUrl = inUrl;
         this.cacher = cacher;
-        urlShortner.counter++;
     }
     base64HashKey() {
         let hash = '';
@@ -21,6 +20,7 @@ class urlShortner {
         if(existingEntry){
             return existingEntry;
         }
+        urlShortner.counter++;
         let hash = this.base64HashKey();
         let objectIn = {
             key: hash,

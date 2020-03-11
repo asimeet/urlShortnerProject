@@ -8,6 +8,7 @@ class ViewInjector {
     }
     getShortenedUrl() {
         let longUrl = document.getElementById("input-url").value;
+        longUrl = longUrl.trim();
         if(longUrl.indexOf('http')<0 && longUrl.indexOf('https') < 0){
             longUrl = `http://${longUrl}`;
         }

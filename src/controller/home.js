@@ -8,6 +8,14 @@ class ViewInjector {
     }
     getShortenedUrl() {
         let longUrl = document.getElementById("input-url").value;
+        if(longUrl.indexOf('http')<0 && longUrl.indexOf('https') < 0){
+            longUrl = `http://${longUrl}`;
+        }
+        let validUrl = longUrl.match(/^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/g);
+        if(!validUrl || validUrl.length == 0){
+            alert('You entered an invalid URL\nPlease Try Again');
+            return;
+        }
         var xhttp = new XMLHttpRequest();
         let ref = this;
         xhttp.onreadystatechange = function () {

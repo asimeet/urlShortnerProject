@@ -67,11 +67,12 @@ class ViewInjector {
             y: [],
             type: "scatter"
         }
-        let count = 0;
         let hidePlot = '';
         if (resObj.data) {
             resObj.data.forEach(item => {
-                let date = item.createdAt.split('T')[0];
+                let date = new Date(item.createdAt);
+                date.setSeconds(0,0);
+                date = date.toISOString();
                 let foundIndex;
                 let dateFound = plotData.x.find((item, index) => {
                     if (item == date) {
@@ -80,13 +81,10 @@ class ViewInjector {
                     }
                 });
                 if (dateFound) {
-                    count++;
-                    plotData.y[foundIndex] = count;
+                    plotData.y[foundIndex] = plotData.y[foundIndex] + 1;
                 } else {
-                    count = 0;
-                    count++;
                     plotData.x.push(date);
-                    plotData.y.push(count);
+                    plotData.y.push(1);
 
                     foundIndex = undefined;
                 }

@@ -8,6 +8,8 @@
 <ul>Server : AWS-EC2 instance</ul>
 <b>Instructions</b>
 <ul>-Running Application can be tested in url http://13.58.109.119:4400</ul>
+<ul>-Enter a valid url and get the short url</ul>
+<ul>-Click on the shortened URL and check if you reach the real url</ul>
 <ul>-Admin Data can be viewed by clicking on button "View Admin Data" on the bottom of the page</ul>
 <ul>-Pop-Up should be allowed by the browser to see the details</ul>
 <ul>-Admin Data has details like time-series plot of url created and the json dump of url created</ul>

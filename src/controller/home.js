@@ -19,9 +19,13 @@ class ViewInjector {
         }
         var xhttp = new XMLHttpRequest();
         let ref = this;
-        xhttp.onreadystatechange = function () {
+        xhttp.onreadystatechange = function (err,data) {
             if (this.readyState == 4 && this.status == 200) {
                 ref.renderResult(JSON.parse(this.response));
+            }
+            if(this.status === 500){
+                alert(this.statusText);
+                this.abort();
             }
         };
         xhttp.open("POST", `${this.config.baseAppUrl}/shorten-url`, true);
@@ -52,6 +56,10 @@ class ViewInjector {
             if (this.readyState == 4 && this.status == 200) {
                 ref.renderAdminData(this.response);
             };
+            if(this.status === 500){
+                alert(this.statusText);
+                this.abort();
+            }
         }
         xhttp.open("POST", `${this.config.baseAppUrl}/admin-data`, true);
         xhttp.setRequestHeader("Content-type", "application/json");

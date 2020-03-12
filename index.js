@@ -38,6 +38,12 @@ app.get("/*", (req, res) => {
     }
 });
 
+app.use(function(err, req, res, next) {
+    res.statusMessage = err.message
+    res.status(500);
+    res.send(err.message)
+ });
+
 app.listen(config.appPort, () => {
     console.log(`Server is running at localhost:${config.appPort}`);
 });

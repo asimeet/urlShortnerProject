@@ -1,9 +1,24 @@
 let cacher = require('../lib/cacher');
 let config = require('../config');
+let dbUtil = require("../lib/dbUtil");
+const fs = require("fs");
+
+try {
+    targetLocation = __dirname;
+    targetLocation = targetLocation.split("services")[0];
+    targetLocation += "lib/counter.json";
+    let counterData = fs.readFileSync(targetLocation);
+    counterData = JSON.parse(counterData);
+    lastCount = counterData.lastCount;
+} catch (error) {
+    console.log(error);
+}
+
 class urlShortner {
     constructor(inUrl) {
         this.inUrl = inUrl;
         this.cacher = cacher;
+        this.dbUtil = dbUtil;
     }
     base64HashKey() {
         let hash = '';
@@ -16,11 +31,14 @@ class urlShortner {
         return hash;
     }
     shortenUrl() {
-        let existingEntry = this.cacher.getFromCache('longUrl',this.inUrl);
-        if(existingEntry){
+        let existingEntry = this.cacher.getFromCache('longUrl', this.inUrl);
+        if (existingEntry) {
             return existingEntry;
         }
         urlShortner.counter++;
+        this.dbUtil.storeCounter(urlShortner.counter).catch(err => {
+            console.log("error-in-storing-counter");
+        });
         let hash = this.base64HashKey();
         let objectIn = {
             key: hash,
@@ -33,23 +51,26 @@ class urlShortner {
     }
     getRealUrl() {
         let hashKey = this.inUrl.split('/')[1];
-        let existingEntry = this.cacher.getFromCache('key',hashKey);
-        if(!existingEntry){
+        let existingEntry = this.cacher.getFromCache('key', hashKey);
+        if (!existingEntry) {
             throw new Error(`URL: ${this.inUrl} is not registered with us`);
         }
         return existingEntry.longUrl;
     }
-    getAdminData(pass){
-        if(pass !== "admin"){
-            return {authencationError:`Invalid Password`};
+    getAdminData(pass) {
+        if (pass !== "admin") {
+            return {
+                authencationError: `Invalid Password`
+            };
         }
         let objectOut = {
-            totalUrlCreated : this.cacher.cache.length,
+            totalUrlCreated: this.cacher.cache.length,
             data: this.cacher.cache
         }
         return objectOut;
     }
 }
-urlShortner.counter = 0;
+
+urlShortner.counter = lastCount;
 
 module.exports = urlShortner;

@@ -44,6 +44,12 @@ app.use(function(err, req, res, next) {
     res.send(err.message)
  });
 
+
+process.on('exit', ()=> {
+    console.log("endddd");
+});
+
+
 app.listen(config.appPort, () => {
     console.log(`Server is running at localhost:${config.appPort}`);
 });

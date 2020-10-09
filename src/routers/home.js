@@ -8,7 +8,7 @@ class HomeRouter extends RouterBase{
             try {
                 res.render('home');
             } catch (err) {
-                res.send("Error : ${err}");
+                res.send(`Error : ${err}`);
             }
         
         });

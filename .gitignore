@@ -1,5 +1,3 @@
 node_modules/
 
-src/lib/counter.json
-
-src/lib/dummy-db.json
+src/data/

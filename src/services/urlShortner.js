@@ -5,8 +5,8 @@ const fs = require("fs");
 
 try {
     targetLocation = __dirname;
-    targetLocation = targetLocation.split("services")[0];
-    targetLocation += "data/counter.json";
+    targetLocation = targetLocation.split("/urlShortnerProject/src/services/")[0];
+    targetLocation += "/urlShortnerProject/src/data/counter.json";
     let counterData = fs.readFileSync(targetLocation);
     counterData = JSON.parse(counterData);
     lastCount = counterData.lastCount;

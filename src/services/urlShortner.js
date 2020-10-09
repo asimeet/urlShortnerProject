@@ -2,6 +2,7 @@ let cacher = require('../lib/cacher');
 let config = require('../config');
 let dbUtil = require("../lib/dbUtil");
 const fs = require("fs");
+let lastCount = 0;
 
 try {
     targetLocation = __dirname;

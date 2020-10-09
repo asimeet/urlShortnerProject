@@ -6,7 +6,7 @@ let lastCount = 0;
 
 try {
     targetLocation = __dirname;
-    targetLocation = targetLocation.split("/urlShortnerProject/src/services/")[0];
+    targetLocation = targetLocation.split("/urlShortnerProject/src/services")[0];
     targetLocation += "/urlShortnerProject/src/data/counter.json";
     let counterData = fs.readFileSync(targetLocation);
     counterData = JSON.parse(counterData);

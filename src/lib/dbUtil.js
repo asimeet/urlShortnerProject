@@ -8,7 +8,7 @@ class DbUtil {
         // dummy func to push data to db
         try {
             let targetLocation = __dirname;
-            targetLocation = targetLocation.split("/urlShortnerProject/src/lib/")[0];
+            targetLocation = targetLocation.split("/urlShortnerProject/src/lib")[0];
             targetLocation += "/urlShortnerProject/src/data/dummy-db.json";
             let data = fs.readFileSync(targetLocation);
             if (data) data = JSON.parse(data);
@@ -25,7 +25,7 @@ class DbUtil {
         // dummy function to get data from db
         try {
             let targetLocation = __dirname;
-            targetLocation = targetLocation.split("/urlShortnerProject/src/lib/")[0];
+            targetLocation = targetLocation.split("/urlShortnerProject/src/lib")[0];
             targetLocation += "/urlShortnerProject/src/data/dummy-db.json";
             let data = fs.readFileSync(targetLocation);
             if (data) data = JSON.parse(data);
@@ -37,7 +37,7 @@ class DbUtil {
     async storeCounter(count){
         try {
             let targetLocation = __dirname;
-            targetLocation = targetLocation.split("/urlShortnerProject/src/lib/")[0];
+            targetLocation = targetLocation.split("/urlShortnerProject/src/lib")[0];
             targetLocation += "/urlShortnerProject/src/data/counter.json";
             let data = fs.readFileSync(targetLocation);
             data = JSON.parse(data);

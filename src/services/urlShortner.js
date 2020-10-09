@@ -6,7 +6,7 @@ const fs = require("fs");
 try {
     targetLocation = __dirname;
     targetLocation = targetLocation.split("services")[0];
-    targetLocation += "lib/counter.json";
+    targetLocation += "data/counter.json";
     let counterData = fs.readFileSync(targetLocation);
     counterData = JSON.parse(counterData);
     lastCount = counterData.lastCount;

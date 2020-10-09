@@ -7,12 +7,15 @@ class DbUtil {
     async pushToDb(objectIn) {
         // dummy func to push data to db
         try {
-            let data = fs.readFileSync(`${__dirname}/dummy-db.json`);
+            let targetLocation = __dirname;
+            targetLocation = targetLocation.split("lib")[0];
+            targetLocation += "data/dummy-db.json";
+            let data = fs.readFileSync(targetLocation);
             if (data) data = JSON.parse(data);
             if (!data) data = [];
             data.push(objectIn);
             data = JSON.stringify(data);
-            fs.writeFileSync(`${__dirname}/dummy-db.json`, data);
+            fs.writeFileSync(targetLocation, data);
             return Promise.resolve("DB Updated")
         } catch (err) {
             return Promise.reject(err);
@@ -21,7 +24,10 @@ class DbUtil {
     async getAllFromDb() {
         // dummy function to get data from db
         try {
-            let data = fs.readFileSync(`${__dirname}/dummy-db.json`);
+            let targetLocation = __dirname;
+            targetLocation = targetLocation.split("lib")[0];
+            targetLocation += "data/dummy-db.json";
+            let data = fs.readFileSync(targetLocation);
             if (data) data = JSON.parse(data);
             return Promise.resolve(data);
         } catch (err) {
@@ -30,11 +36,14 @@ class DbUtil {
     }
     async storeCounter(count){
         try {
-            let data = fs.readFileSync(`${__dirname}/counter.json`);
+            let targetLocation = __dirname;
+            targetLocation = targetLocation.split("lib")[0];
+            targetLocation += "data/counter.json";
+            let data = fs.readFileSync(targetLocation);
             data = JSON.parse(data);
             data.lastCount = count;
             data = JSON.stringify(data);
-            fs.writeFileSync(`${__dirname}/counter.json`, data);
+            fs.writeFileSync(targetLocation, data);
             return Promise.resolve("DB Updated")
         } catch (err) {
             return Promise.reject(err);

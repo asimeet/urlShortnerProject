@@ -4,7 +4,7 @@ class ShortenUrlRouter extends RouterBase{
     constructor(req,res){
         super();
     }
-    prepareResponse(){
+    setUpRoutes(){
         this.router.use('/', (req, res) => {
             let serviceInst = new urlShortner();
             let result = serviceInst.getAdminData(req.body.pass);

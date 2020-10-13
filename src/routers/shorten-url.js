@@ -4,7 +4,7 @@ class ShortenUrlRouter extends RouterBase{
     constructor(req,res){
         super();
     }
-    prepareResponse(){
+    setUpRoutes(){
         this.router.use('/', (req, res) => {
             if(!req.body || !req.body.longUrl){
                 throw new Error(`Missing Request Data - body.longUrl`);

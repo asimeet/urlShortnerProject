@@ -5,9 +5,9 @@ class RouterBase{
     constructor(){
         this.router = express.Router();
         this.config = config;
-        this.prepareResponse();
+        this.setUpRoutes();
     }
-    prepareResponse(){
+    setUpRoutes(){
         //to be inplemented by base classes
     }
 }

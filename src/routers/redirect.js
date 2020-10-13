@@ -5,7 +5,7 @@ class RedirectRouter extends RouterBase {
     constructor() {
         super();
     }
-    prepareResponse() {
+    setUpRoutes() {
         this.router.use('/', (req, res,next) => {
                 let serviceInst = new urlShortner(req.path);
                 let realUrl = serviceInst.getRealUrl();

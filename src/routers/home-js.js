@@ -4,7 +4,7 @@ class HomeJsRouter extends RouterBase{
     constructor(req,res){
         super();
     }
-    prepareResponse(){
+    setUpRoutes(){
         this.router.use('/',(req,res)=>{
             let viewInjector= String(HomeJSController);
             let content = `

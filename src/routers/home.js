@@ -3,14 +3,13 @@ class HomeRouter extends RouterBase{
     constructor(req,res){
         super();
     }
-    prepareResponse(){
+    setUpRoutes(){
         this.router.use('/', (req, res) => {
             try {
                 res.render('home');
             } catch (err) {
                 res.send(`Error : ${err}`);
             }
-        
         });
     }
 }

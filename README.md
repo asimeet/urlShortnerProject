@@ -4,7 +4,13 @@
 <b>Tech Stack</b>
 <ul>Forntend : Node.js(EJS views)</ul>
 <ul>Backend : Node.js</ul>
-<ul>Database : Not yet used(will be used,currently using application cache)</ul> 
+<ul>Test Suite: Jest </ul>
+<ul>Cache: Redis</ul>
+<ul>Logger: Winston </ul>
+<ul>Monitoring: ELK </ul>
+<ul>CI/CD: Github Actions </ul>
+<ul>Deployment: Kubernetes </ul>
+<ul>Database : json file </ul> 
 <ul>Server : AWS-EC2 instance</ul>
 <b>Instructions</b>
 <ul>-Running Application can be tested in url http://13.58.109.119:4400</ul>

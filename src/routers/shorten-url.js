@@ -1,5 +1,5 @@
 const RouterBase =  require('../lib/router-base');
-const urlShortner =  require('../services/urlShortner');
+const urlShortner =  require('../services/urlShortner.service');
 class ShortenUrlRouter extends RouterBase{
     constructor(req,res){
         super();

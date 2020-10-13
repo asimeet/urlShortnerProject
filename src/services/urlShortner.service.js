@@ -17,6 +17,8 @@ try {
 
 class urlShortner {
     constructor(inUrl) {
+        //static variable
+        urlShortner.counter =  urlShortner.counter || lastCount;
         this.inUrl = inUrl;
         this.cacher = cacher;
         this.dbUtil = dbUtil;
@@ -71,7 +73,4 @@ class urlShortner {
         return objectOut;
     }
 }
-
-urlShortner.counter = lastCount;
-
 module.exports = urlShortner;

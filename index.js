@@ -22,7 +22,7 @@ app.set('view engine', 'ejs');
 
 let routingKeys = Object.keys(routers);
 routingKeys.forEach(rkey => {
-    app.use(`/${rkey}`, routers[rkey]());
+    app.use(`${config.appRoute}/${rkey}`, routers[rkey]());
 });
 
 app.get("/*", (req, res) => {

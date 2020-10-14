@@ -29,7 +29,7 @@ app.get("/*", (req, res) => {
     if (req.path == '/') {
         res.redirect(`${config.baseAppUrl}/home`);
     } else {
-        rkey = req.path.split(`${req.baseUrl}/`)[1];
+        rkey = req.path.split(`/`)[1];
         if (routers[rkey] == undefined) {
             res.redirect(`${config.baseAppUrl}/rdr${req.path}`);
         } else {

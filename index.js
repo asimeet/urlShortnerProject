@@ -26,7 +26,7 @@ routingKeys.forEach(rkey => {
 });
 
 app.get("/*", (req, res) => {
-    if (req.path == '/' || req.path == "/url-shortner") {
+    if (req.path == '/') {
         res.redirect("/home");
     } else {
         rkey = req.path.split('/')[1];

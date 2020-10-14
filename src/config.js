@@ -8,10 +8,10 @@ let baseAppUrl = process.env.URL_SHORTNER_BASE_URL || "http://localhost";
 let validUrl = baseAppUrl.match(/^(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\(\)\*\+,;=.]+$/g);
 
 if(!validUrl || validUrl.length == 0){
-    if(baseAppUrl.indexOf(".com") < 0)    baseAppUrl += `:${appPort}`;
+    baseAppUrl += `:${appPort}`;
 }
 
-baseAppUrl += appPort;
+baseAppUrl += appRoute;
 
 const config = {
     appPort,

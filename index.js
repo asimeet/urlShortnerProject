@@ -26,7 +26,7 @@ routingKeys.forEach(rkey => {
 });
 
 app.get("/*", (req, res) => {
-    if (req.path == '/') {
+    if (req.path == '/' || req.path == "/url-shortner") {
         res.redirect("/home");
     } else {
         rkey = req.path.split('/')[1];
@@ -43,12 +43,6 @@ app.use(function(err, req, res, next) {
     res.status(500);
     res.send(err.message)
  });
-
-
-process.on('exit', ()=> {
-    console.log("endddd");
-});
-
 
 app.listen(config.appPort, () => {
     console.log(`Server is running at localhost:${config.appPort}`);

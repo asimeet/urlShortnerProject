@@ -1,5 +1,5 @@
 const RouterBase = require('../lib/router-base');
-const urlShortner = require('../services/urlShortner');
+const urlShortner = require('../services/urlShortner.service');
 const config = require('../config');
 class RedirectRouter extends RouterBase {
     constructor() {

@@ -23,6 +23,11 @@ const routers = {
         let handler = require("./admin-data.js");
         let router = new handler().router;
         return router;
+    },
+    "home.css" : () => {
+        let handler = require("./home-css.js");
+        let router = new handler().router;
+        return router;
     }
 }
 module.exports = routers;

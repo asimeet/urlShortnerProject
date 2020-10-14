@@ -32,7 +32,7 @@ app.get("/*", (req, res) => {
     } else {
         rkey = req.path.split(`${config.appRoute}/`)[1];
         if (routers[rkey] == undefined) {
-            res.redirect(`${config.appRoute}/rdr${req.path}`);
+            res.redirect(`${config.appRoute}/rdr/${rkey}`);
         } else {
             res.redirect(req.path);
         }

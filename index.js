@@ -27,11 +27,11 @@ routingKeys.forEach(rkey => {
 
 app.get("/*", (req, res) => {
     if (req.path == '/') {
-        res.redirect("/home");
+        res.redirect(`${config.baseAppUrl}/home`);
     } else {
         rkey = req.path.split('/')[1];
         if (routers[rkey] == undefined) {
-            res.redirect(`/rdr${req.path}`);
+            res.redirect(`${config.baseAppUrl}/rdr${req.path}`);
         } else {
             res.redirect(req.path);
         }

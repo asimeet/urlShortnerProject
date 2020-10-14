@@ -26,6 +26,7 @@ routingKeys.forEach(rkey => {
 });
 
 app.get("/*", (req, res) => {
+    console.log(req.path);
     if (req.path == '/' || req.path == config.appRoute) {
         res.redirect(`${config.appRoute}/home`);
     } else {
